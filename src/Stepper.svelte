@@ -2,7 +2,7 @@
     export let value;
     import { createEventDispatcher } from 'svelte';
     const dispatch = createEventDispatcher();
-    const dispatchValue = (btnValue)=>{
+    const handleClick = (btnValue)=>{
         dispatch('btnValue', {
             value: btnValue
         });
@@ -10,9 +10,9 @@
 </script>
 
 <main>
-	<button on:click={() => dispatchValue('-')}>-</button>
+	<button on:click={() => handleClick('-')}>-</button>
     <h1>{value}</h1>
-	<button on:click={() => dispatchValue('+')}>+</button>
+	<button on:click={() => handleClick('+')}>+</button>
 </main>
 
 <style>
